@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h2 class="text-center">Accident Investigation Report</h2>
+    {{-- <h2 class="text-center">Accident Investigation Report</h2> --}}
     <div class="card">
         <div class="card-body">
             @if (session()->has('message'))

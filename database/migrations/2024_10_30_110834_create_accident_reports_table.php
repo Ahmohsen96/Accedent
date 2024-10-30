@@ -25,6 +25,11 @@ return new class extends Migration
             $table->text('underlying_causes')->nullable();
             $table->text('root_causes')->nullable();
             $table->text('recommendations')->nullable();
+
+            $table->string('acknowledgement_name');
+            $table->string('acknowledgement_signature');
+            $table->date('acknowledgement_date');
+            
             $table->timestamps();
         });
     }

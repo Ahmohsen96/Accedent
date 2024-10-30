@@ -10,6 +10,8 @@ class AccidentReportForm extends Component
 {
     public $accident_date, $accident_time, $region, $location, $injured_employee_name, $department;
     public $description, $loss, $immediate_causes, $underlying_causes, $root_causes, $recommendations;
+    public $acknowledgement_name, $acknowledgement_signature, $acknowledgement_date;
+
 
     protected $rules = [
         'accident_date' => 'required|date',
@@ -24,6 +26,10 @@ class AccidentReportForm extends Component
         'underlying_causes' => 'nullable|string',
         'root_causes' => 'nullable|string',
         'recommendations' => 'nullable|string',
+
+        'acknowledgement_name' => 'required|string',
+        'acknowledgement_signature' => 'required|string',
+        'acknowledgement_date' => 'required|date',
     ];
 
     public function submit()
