@@ -6,16 +6,20 @@
     {{-- <title>Accident Investigation Report</title> --}}
     <!-- Include Bootstrap CSS or any other CSS framework -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
     @livewireStyles
 </head>
 <body>
+
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         {{-- <a class="navbar-brand" href="#">Dania Air Control System Factory</a> --}}
     </nav>
 
-    <div class="container mt-4">
+    {{-- <div class="container mt-4"> --}}
         @yield('content')
-    </div>
+    {{-- </div> --}}
 
     <!-- Include Bootstrap JS and jQuery (Optional) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

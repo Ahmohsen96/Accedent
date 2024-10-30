@@ -1,83 +1,92 @@
 <div>
-    <header style="background-color: #007bff; color: white; padding: 15px; text-align: center;">
-        <img src="{{ asset('images/logo.png') }}" alt="Company Logo" style="max-width: 150px; height: auto;">
+    <header style="background-color: white; color: rgb(6, 0, 0); padding: 20px;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <!-- Logo -->
+            <img src="{{ asset('images/logo.png') }}" alt="Company Logo" style="max-width: 140px; height: auto;">
+
+            <div style="text-align: center; flex-grow: 1;">
+                <h1 style="margin: 0; font-size: 1.2em; font-weight: bold;">DANIA AIR CONTROL SYSTEM FACTORY</h1>
+                <h2 style="margin: 5px 0 0; font-size: 1.2em;">Accident Investigation Report | تقرير التحقيق في الحوادث</h2>
+            </div>
+
+            <div style="width: 50px;"></div>
+        </div>
     </header>
 
     <div class="container">
         <form wire:submit.prevent="submit">
-            <h1>Accident Investigation Report</h1>
 
             <div class="form-section">
-                <label>ACCIDENT DATE:</label>
+                <label>ACCIDENT DATE / تاريخ الحادث</label>
                 <input type="date" wire:model="accident_date">
                 @error('accident_date') <span class="error">{{ $message }}</span> @enderror
             </div>
 
             <div class="form-section">
-                <label>ACCIDENT TIME:</label>
+                <label>ACCIDENT TIME / وقت الحادث </label>
                 <input type="time" wire:model="accident_time">
                 @error('accident_time') <span class="error">{{ $message }}</span> @enderror
             </div>
 
             <div class="form-section">
-                <label>REGION:</label>
+                <label>REGION / المنطقة </label>
                 <input type="text" wire:model="region" placeholder="Region">
                 @error('region') <span class="error">{{ $message }}</span> @enderror
             </div>
 
             <div class="form-section">
-                <label>LOCATION:</label>
+                <label>LOCATION / الموقع </label>
                 <input type="text" wire:model="location" placeholder="Location">
                 @error('location') <span class="error">{{ $message }}</span> @enderror
             </div>
 
             <div class="form-section">
-                <label>NAME OF INJURED EMPLOYEE:</label>
+                <label>NAME OF INJURED EMPLOYEE / اسم الموظف المصاب</label>
                 <input type="text" wire:model="injured_employee_name" placeholder="Employee Name">
                 @error('injured_employee_name') <span class="error">{{ $message }}</span> @enderror
             </div>
 
             <div class="form-section">
-                <label>DEPARTMENT:</label>
+                <label>DEPARTMENT / القسم </label>
                 <input type="text" wire:model="department" placeholder="Department">
                 @error('department') <span class="error">{{ $message }}</span> @enderror
             </div>
 
             <div class="form-section">
-                <label>DESCRIPTION OF ACCIDENT:</label>
+                <label>DESCRIPTION OF ACCIDENT / وصف الحادث</label>
                 <textarea wire:model="description" placeholder="Describe the accident"></textarea>
                 @error('description') <span class="error">{{ $message }}</span> @enderror
             </div>
 
             <div class="form-section">
-                <label>DESCRIBE LOSS:</label>
+                <label>DESCRIBE LOSS / وصف الخسارة</label>
                 <textarea wire:model="loss" placeholder="Describe the loss"></textarea>
             </div>
 
             <div class="form-section">
-                <label>IMMEDIATE CAUSES:</label>
+                <label>IMMEDIATE CAUSES / الاسباب المباشرة</label>
                 <textarea wire:model="immediate_causes" placeholder="Immediate causes"></textarea>
             </div>
 
             <div class="form-section">
-                <label>UNDERLYING CAUSES:</label>
+                <label>UNDERLYING CAUSES / الاسباب الكامنة</label>
                 <textarea wire:model="underlying_causes" placeholder="Underlying causes"></textarea>
             </div>
 
             <div class="form-section">
-                <label>ROOT CAUSES:</label>
+                <label>ROOT CAUSES / الاسباب الجذرية </label>
                 <textarea wire:model="root_causes" placeholder="Root causes"></textarea>
             </div>
 
             <div class="form-section">
-                <label>RECOMMENDATIONS:</label>
+                <label>RECOMMENDATIONS / التوصيات</label>
                 <textarea wire:model="recommendations" placeholder="Recommendations"></textarea>
             </div>
 
             <!-- Acknowledgement Section -->
             <h2>Acknowledgement</h2>
             <div class="form-section">
-                <label>ACKNOWLEDGEMENT NAME:</label>
+                <label>ACKNOWLEDGEMENT NAME</label>
                 <input type="text" wire:model="acknowledgement_name" placeholder="Your Name">
                 @error('acknowledgement_name') <span class="error">{{ $message }}</span> @enderror
             </div>
@@ -103,73 +112,4 @@
         @endif
     </div>
 
-    <footer style="background-color: #f1f1f1; text-align: center; padding: 10px; margin-top: 20px;">
-        <p>&copy; {{ date('Y') }} Your Company Name. All rights reserved.</p>
-    </footer>
-
-    <style>
-        .container {
-            max-width: 700px;
-            margin: 20px auto;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background-color: #ffffff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2 {
-            text-align: center;
-        }
-        img {
-            max-width: 150px; /* Adjust as necessary for your logo */
-            height: auto;
-            margin-bottom: 10px; /* Add some space below the logo */
-        }
-        .form-section {
-            margin-bottom: 15px;
-        }
-        label {
-            font-weight: bold;
-            display: block;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-size: 1em;
-        }
-        input:focus, textarea:focus {
-            border-color: #007bff;
-            outline: none;
-        }
-        .error {
-            color: red;
-            font-size: 0.9em;
-        }
-        .alert {
-            background-color: #dff0d8;
-            color: #3c763d;
-            padding: 10px;
-            margin-top: 15px;
-            text-align: center;
-            border: 1px solid #d6e9c6;
-            border-radius: 4px;
-        }
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1em;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
 </div>
